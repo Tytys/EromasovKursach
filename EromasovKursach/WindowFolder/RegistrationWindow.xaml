@@ -1,0 +1,62 @@
+﻿<Window x:Class="EromasovKursach.WindowFolder.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EromasovKursach.WindowFolder"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        MaxHeight="350" MaxWidth="400"
+        MinHeight="350" MinWidth="400"
+        Height="350" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Title="Окно регистрации">
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="135"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="92*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Margin="16,16,16,16">
+            <TextBlock Text="Добро пожаловать"
+                       Style="{DynamicResource HeadingTextBlock}" 
+                       FontSize="16"
+                       Margin="0"/>
+            <TextBlock Text="Зарегестрируйтесь чтобы продолжить"
+                       Style="{DynamicResource HeadingTextBlock}" 
+                       FontSize="16"
+                       Margin="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Margin="16,16,16,16">
+            <TextBox x:Name="LoginTb"
+                     materialDesign:HintAssist.Hint="Логин"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <PasswordBox 
+                    x:Name="PasswordPB"
+                         materialDesign:HintAssist.Hint="Пароль"
+                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            <PasswordBox 
+                    
+                         materialDesign:HintAssist.Hint="Повторите пароль"
+                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+        </StackPanel>
+
+        <Button Grid.Row="3" Margin="16,15,16,70"
+                Command="{Binding LoginCommand}"
+                Content="Зарегистрироваться"
+                Style="{StaticResource MaterialDesignRaisedButton}" Grid.RowSpan="2" 
+                Click="RegistrationBTN_Click"
+                />
+        <Button Grid.Row="4" Margin="16,27,156,27"
+                Content="Назад"
+                Style="{StaticResource MaterialDesignRaisedButton}" 
+                Click="Button_Click"
+                />
+
+    </Grid>
+</Window>
